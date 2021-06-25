@@ -1,0 +1,42 @@
+{
+	"type":"minecraft:chest",
+    "pools": [
+        {
+            "rolls": 1.0,
+            "bonus_rolls": 0.0,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:fishing_rod",
+                    "functions": [
+                        {
+                            "function": "minecraft:copy_nbt",
+                            "source": "this",
+                            "ops": [
+                                {
+                                    "source": "SelectedItem.tag.Damage",
+                                    "target": "Damage",
+                                    "op": "replace"
+                                },
+                                {
+                                    "source": "SelectedItem.tag.Enchantments",
+                                    "target": "Enchantments",
+                                    "op": "replace"
+                                },
+                                {
+                                    "source": "SelectedItem.tag.RepairCost",
+                                    "target": "RepairCost",
+                                    "op": "replace"
+                                }
+                            ]
+                        },
+                        {
+                            "function": "minecraft:set_nbt",
+                            "tag": "{FishRush:1}"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,138 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+  	{
+		"rolls": 1.0,
+		"bonus_rolls": 0.0,
+  		"entries": [
+  			{
+  				"type": "minecraft:item",
+  				"functions": [
+  					{
+  						"function": "minecraft:set_name",
+  						"entity": "this",
+  						"name": {"selector":"@s","extra":[{"text":"的頭顱"}]}
+  					},
+  					{
+  						"function": "minecraft:set_lore",
+  						"lore":[{"text":"以8個金錠圍繞以合成金頭顱-死亡特典","italic":true,"color":"white"}]
+  					},
+  					{
+  						"function": "minecraft:set_nbt",
+  						"tag": "{HideFlags:1}"
+  					},
+  					{
+  						"function": "minecraft:enchant_randomly",
+  						"enchantments": ["minecraft:loyalty"]
+  					},
+  					{
+  						"function": "minecraft:enchant_with_levels",
+  						"levels": 0
+  					},
+  					{
+  						"function": "minecraft:fill_player_head",
+  						"entity": "this"
+  					}
+  				],
+  				"conditions": [
+  					{
+  						"condition": "minecraft:entity_properties",
+  						"predicate":{
+  							"nbt": "{Tags:[gold_head_normal]}"
+  						},
+  						"entity": "this"
+  					}
+  				],
+  				"name": "minecraft:player_head"
+  			}
+  		]
+  	},
+    {
+	  "rolls": 1.0,
+	  "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_name",
+              "entity": "this",
+              "name": {"selector":"@s","extra":[{"text":"的頭顱"}]}
+            },
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{HideFlags:1}"
+            },
+            {
+              "function": "minecraft:enchant_randomly",
+              "enchantments": ["minecraft:loyalty"]
+            },
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 0
+            },
+            {
+              "function": "minecraft:fill_player_head",
+              "entity": "this"
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:entity_properties",
+                "predicate":{
+                  "nbt": "{Tags:[gold_head_normal]}"
+                },
+                "entity": "this"
+              }
+            }
+          ],
+          "name": "minecraft:player_head"
+        }
+      ]
+    },
+  	{
+		"rolls": 1.0,
+		"bonus_rolls": 0.0,
+  		"entries": [
+  			{
+  				"type": "minecraft:item",
+  				"functions": [
+  					{
+  						"function": "minecraft:set_name",
+  						"entity": "this",
+  						"name": {"text":"金頭顱 - 死亡特典","color":"dark_purple","italic":false}
+  					},
+  					{
+  						"function": "minecraft:set_lore",
+  						"lore":[{"text":"點擊右鍵使用，回復8點血量並獲得2分鐘吸收一效果","italic":false,"color":"white"}]
+  					},
+  					{
+  						"function": "minecraft:set_nbt",
+  						"tag": "{HideFlags:1,Recipes:[\"minecraft:golden_apple\"]}"
+  					},
+  					{
+  						"function": "minecraft:enchant_randomly",
+  						"enchantments": ["minecraft:loyalty"]
+  					},
+  					{
+  						"function": "minecraft:enchant_with_levels",
+  						"levels": 0
+  					}
+  				],
+  				"conditions": [
+  					{
+  						"condition": "minecraft:entity_properties",
+  						"predicate":{
+  							"nbt": "{Tags:[gold_head_fast]}"
+  						},
+  						"entity": "this"
+  					}
+  				],
+  				"name": "minecraft:knowledge_book"
+  			}
+  		]
+  	}
+  ]
+}
